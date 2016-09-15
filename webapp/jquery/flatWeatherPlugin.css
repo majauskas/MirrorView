@@ -94,7 +94,7 @@
 }
 
 .flatWeatherPlugin sup {
-  opacity: 0.7;
+  /*opacity: 0.7;  gradi*/
   font-size: 65%;
   vertical-align: baseline;
   top: -0.5em;
