@@ -1,39 +1,35 @@
 "use strict";
 const Server = require(__dirname + "/server.js");
 
-const electron = require('electron')
+const electron = require('electron');
 // Module to control application life.
-const app = electron.app
+const app = electron.app;
 // Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
+const BrowserWindow = electron.BrowserWindow;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow
+let mainWindow;
 
 function createWindow () {
 
-  var isDev = false;
-  if(process.argv[2] == "dev"){
-		isDev = true;
-	}
-
-  // Create the browser window.
-  
-  if(isDev){
-      mainWindow = new BrowserWindow({width: 1200, height: 700, x: 0, y: 0, fullscreen:false,autoHideMenuBar:true, darkTheme: true, webPreferences: {nodeIntegration: false}})
-  }else{
-      mainWindow = new BrowserWindow({fullscreen:true,autoHideMenuBar:true, darkTheme: true, webPreferences: {nodeIntegration: false}})
+  var isProd = false;
+  if(process.argv[2] == "prod"){
+	  isProd = true;
   }
 
-      console.log(__dirname);
-  // and load the index.html of the app.
-  //mainWindow.loadURL('file://'+__dirname+'/index.html')
+  // Create the browser window.
+  if(isProd){
+	  mainWindow = new BrowserWindow({fullscreen:true,autoHideMenuBar:true, darkTheme: true, webPreferences: {nodeIntegration: false}})
+  }else{
+	  mainWindow = new BrowserWindow({width: 1200, height: 700, x: 0, y: 0, fullscreen:false,autoHideMenuBar:true, darkTheme: true, webPreferences: {nodeIntegration: false}})      
+  }
+
   mainWindow.loadURL("http://localhost:8080");
   
 
   // Open the DevTools.
-  if(isDev){
+  if(!isProd){
     mainWindow.webContents.openDevTools()
   }
   
@@ -67,7 +63,7 @@ app.on('activate', function () {
   if (mainWindow === null) {
     createWindow()
   }
-})
+});
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
