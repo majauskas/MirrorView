@@ -13,7 +13,8 @@ let mainWindow;
 
 function createWindow () {
 
-  var isProd = false;
+	console.log(process.argv);
+  var isProd = true;
   if(process.argv[2] == "prod"){
 	  isProd = true;
   }
