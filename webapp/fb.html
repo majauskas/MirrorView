@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<!-- <html manifest="cache.manifest"> -->
+<!-- <html manifest="cache.manifest" type="text/cache-manifest"> -->
+<html>
+<head> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	
+	
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<link rel="apple-touch-icon" href="images/security.png"/>
+	<link  rel="apple-touch-startup-image" href="images/security.png"/>		
+
+	<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css" />
+	
+
+
+
+	
+		
+	<link rel="stylesheet" href="css/main.css" />
+	
+
+	<script type="text/javascript" src="jquery/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="jquery/jquery.mobile-1.4.5.min.js"></script>
+
+	
+	<script type="text/javascript" src="jquery/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="js/socket.io.js"></script> 
+	
+	
+	<script type="text/javascript" src="jquery/jquery.mobile.iscroll.js"></script>
+    <script type="text/javascript" src="jquery/jquery.mobile.iscrollview.js"></script>
+    <link rel="stylesheet" href="jquery/jquery.mobile.iscrollview.css"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile.iscrollview-pull.css"/>	
+
+	<script type="text/javascript" src="jquery/jquery.youtube-inview-autoplay.js"></script>
+
+
+    
+	<script type="text/javascript">
+			$(function() {
+				$("body>[data-role='panel']").panel().trigger( "create" );
+// 				setTimeout(function() {
+// 					UTILITY.keypad("Sicurezza violata! ", function(number) {
+// 					});
+// 				}, 1000)
+			});
+	</script>
+	
+	
+	  <script type="text/javascript">
+
+
+// 	  var accessToken;
+// 	  var userID;
+	  
+//   $(document).ready(function() {
+
+// 	  $.ajaxSetup({ cache: true });
+// 	  $.getScript('//connect.facebook.net/it_IT/sdk.js', function(){
+// 	    FB.init({
+// 	      appId: '223018664762088',
+// 	      version: 'v2.7' // or v2.1, v2.2, v2.3, ...
+// 	    });     
+
+		  
+// FB.getLoginStatus(function(response) {
+//   if (response.status === 'connected') {
+//       console.log('Logged in.');
+//       init(response);
+//   }
+//   else {
+
+// 	    FB.login(function(response) {
+// 	    	 init(response);
+// 		  }, {scope:'publish_actions,user_photos,user_friends,user_location,user_events,user_birthday,user_actions.news,user_about_me,email,rsvp_event,pages_show_list,user_relationships'});
+	  
+			  
+//   }
+// });
+
+// // create_event
+
+
+
+		
+// function init(response){
+// 	accessToken=response.authResponse.accessToken;
+// 	userID=response.authResponse.userID;
+// 	console.log(accessToken);
+// 	console.log(userID);
+	
+// 	getFriends();
+
+// }
+
+
+
+// 	  });
+
+
+
+		 
+	
+//   });
+
+
+
+
+//   function getFriends() {
+
+// 	  FB.api("/10153994577940979",function (response) {
+// 		    	console.log(response);
+// 	  },{fields:"images"});
+	  
+
+// 	}
+	
+  </script>
+
+
+<script type="text/javascript">
+  // Load the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  function onYouTubeIframeAPIReady() {
+    $('.youtube-video').inViewAutoplay({
+      autohide: 1,
+      autoplay: 1,
+      modestbranding: 1,
+      controls: 0,
+      rel: 0,
+      quality: 'hd720',
+      loop: 1,
+      showinfo: 0
+    });
+  }
+</script>
+	
+</head>
+
+	<body>
+
+
+<div id="HOME-PAGE" data-role="page" class="ui-page-active" data-theme="g">
+
+
+	
+<div class="ui-content" style="padding: 5px"> 	
+		<div class="youtube-video" 
+	     id="menorca-faro-de-favarix" 
+	     data-video-id="o2Fs6SoRHCk" 
+	     width="1000" 
+	     height="563"></div>
+		</div>	 
+
+</div>	 
+</body></html>

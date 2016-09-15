@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	
+	
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+	<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="css/main.css" />
+	
+
+	<script type="text/javascript" src="jquery/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="jquery/jquery.mobile-1.4.5.min.js"></script>
+
+	
+	<script type="text/javascript" src="jquery/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="js/socket.io.js"></script> 
+	
+	
+	<script type="text/javascript" src="jquery/jquery.mobile.iscroll.js"></script>
+    <script type="text/javascript" src="jquery/jquery.mobile.iscrollview.js"></script>
+    <link rel="stylesheet" href="jquery/jquery.mobile.iscrollview.css"/>
+    <link rel="stylesheet" href="jquery/jquery.mobile.iscrollview-pull.css"/>	
+
+
+	<link rel="stylesheet" href="jquery/flatWeatherPlugin.css"/>
+	<script type="text/javascript" src="jquery/jquery.flatWeatherPlugin.js"></script>
+	<script type="text/javascript" src="jquery/progressbar.js"></script>
+<script type="text/javascript" src="jquery/jquery.playlist.js"></script>
+
+
+<script type="text/javascript" src="jquery/jquery.reverseorder.js"></script>
+<script type="text/javascript" src="jquery/jquery.equalizer.js"></script>
+<link rel="stylesheet" href="jquery/jquery.equalizer.css" />
+
+<script type="text/javascript">
+	// https://github.com/anawaz-cc/equalizer
+	$(document).ready(function(){
+		$('#song1').equalizer({
+			color1: '#74BBFB'
+			,color2: '#fff'
+// 			,bars: 30
+// 			,barMargin: 5.5
+		});
+		$('#song2').equalizer({
+			color1: '#3300FF',
+			color2: '#fff'
+		});
+	});
+</script>
+
+
+<script type="text/javascript" src="jquery/jquery.jplayer.js"></script>
+<script type="text/javascript" src="jquery/ttw-music-player-min.js"></script>
+<link rel="stylesheet" href="jquery/myplaylist.js" />
+<link rel="stylesheet" href="jquery/ttw-music-player.css" />
+
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id tortor nisi. Aenean sodales diam ac lacus elementum scelerisque. Suspendisse a dui vitae lacus faucibus venenatis vel id nisl. Proin orci ante, ultricies nec interdum at, iaculis venenatis nulla. ';
+
+            $('#player-container').ttwMusicPlayer(
+            		[
+
+            		    {
+            		        mp3:'music/1.mp3',
+            		        oga:'music/1.ogg',
+            		        title:'Love The Way You Lie',
+            		        artist:'Eminem',
+            		        rating:4,
+            		        buy:'#',
+            		        price:'0.99',
+            		        duration:'0:30',
+            		        cover:'music/1.jpg'
+            		    },
+            		    {
+            		        mp3:'music/1.mp3',
+            		        oga:'music/1.ogg',
+            		        title:'qweqw qwe Lie',
+            		        artist:'Eminem',
+            		        rating:4,
+            		        buy:'#',
+            		        price:'0.99',
+            		        duration:'0:30',
+            		        cover:'music/1.jpg'
+            		    }
+
+            		], {
+                autoPlay:false, 
+                description:description
+            });
+        });
+    </script>
+
+
+<script type="text/javascript">
+//     $(document).ready(function() {
+//         $('video').playlistParser();
+//     });
+</script>
+
+    
+	<script type="text/javascript">
+			$(function() {
+				$("body>[data-role='panel']").panel().trigger( "create" );
+
+
+var bar = new ProgressBar.Circle(container, {
+  color: 'white',
+  // This has to be the same size as the maximum width to
+  // prevent clipping
+  strokeWidth: 4,
+  trailWidth: 9,
+  easing: 'easeInOut',
+  duration: 3400,
+  text: {
+    autoStyleContainer: false
+  },
+  from: { color: '#FFFFFF', width: 1 },
+  to: { color: '#000000', width: 4 },
+  // Set default step function for all animate calls
+  step: function(state, circle) {
+    circle.path.setAttribute('stroke', state.color);
+    circle.path.setAttribute('stroke-width', state.width);
+
+    var value = Math.round(circle.value() * 100);
+    if (value === 0) {
+      circle.setText('');
+    } else {
+      circle.setText(value);
+    }
+
+  }
+});
+bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+bar.text.style.fontSize = '2rem';
+
+bar.animate(1.0);  // Number from 0.0 to 1.0
+
+setInterval(function() {
+	bar.animate(1.0);	
+}, 3000);
+
+setInterval(function() {
+	bar.animate(0.0);	
+}, 4000);
+
+			});
+	</script>
+	
+	
+	
+	  <script type="text/javascript">
+  $(document).ready(function() {
+
+		//Setup the plugin, see readme for more examples
+		var weather = $("#weather").flatWeatherPlugin({
+		  location: "Gallarate", //city and region *required 
+		  country: "Italia",         //country *required 
+		  //optional:
+		  api: "openweathermap", //default: openweathermap (openweathermap or yahoo)
+		  apikey: "fcf9c61ad7b6a9e4ab008d562b736d3f",   //optional api key for openweather
+		  view : "simple", //default: full (partial, full, simple, today or forecast)
+		  displayCityNameOnly : true, //default: false (true/false) if you want to display only city name
+		  forecast: 0, //default: 5 (0 -5) how many days you want forecast
+		  render: true, //default: true (true/false) if you want plugin to generate markup
+		  loadingAnimation: true //default: true (true/false) if you want plugin to show loading animation
+		  //units : "metric" or "imperial" default: "auto"
+		});
+
+		setInterval(function() {
+			weather.flatWeatherPlugin('fetchWeather').then(
+					function(data){
+						weather.flatWeatherPlugin('render', data);
+					},function(data){
+						weather.flatWeatherPlugin('error', data);
+					}
+			);
+	 	}, 1000*60*5);
+	  
+
+	getTime();
+	setInterval(function() {
+		getTime();
+	}, 1000*10);
+
+	
+
+	function getTime() {
+		var monthNames = [ "Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre" ]; 
+		var dayNames= ["Domenica","Lunedì","Martedì","Mercoledì","Giovedì","Venerdì","Sabato"]
+		
+		var newDate = new Date();
+		newDate.setDate(newDate.getDate());
+		$('#clockDate').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
+					
+		var date = new Date();
+		var hours = date.getHours();
+		hours = ( hours < 10 ? "0" : "" ) + hours;
+		var minutes = date.getMinutes();
+		minutes = ( minutes < 10 ? "0" : "" ) + minutes;
+	
+		$("#clockTime").html(hours+":"+minutes);
+	};
+
+
+	
+  });
+
+	
+  </script>
+	
+</head>
+
+	<body>
+
+
+<div id="HOME-PAGE" data-role="page" class="ui-page-active" data-theme="g">
+
+
+	
+<div class="ui-content">
+
+<div id="player-container"></div>
+
+
+			<div class="relative_left" style="width: 800px;margin: 30px 0px;height: 400px;left : 50%;">
+				<p>
+					<div class="song1 equalizer"></div>
+					<audio loop autoplay id="song1"> <!-- controls -->
+						<source src="music/file.mp3" type='audio/ogg'>
+					</audio>
+				<p>
+				<p>
+					<div class="song2 equalizer"></div>
+					<audio loop autoplay id="song2"> <!-- controls -->
+						<source src="music/file.mp3" type='audio/ogg'>
+					</audio>
+				<p>
+    		</div>
+
+
+<!-- <video id="video" src="http://remote/list.m3u" width="768" height="432"></video> 	 -->
+<div id="container" style="margin-top:200px;left:40%"></div>
+
+<!--     <div class="ui-grid-a"> -->
+<!--        <div class="ui-block-a" style="text-align:center; text-shadow: none; color: white;"> -->
+<!--         <div id="weather" style="margin-left:50px"></div> -->
+<!-- 	  </div> -->
+<!--  	  <div class="ui-block-b"> -->
+ 	  
+<!-- 				<table width="100%" style="border-collapse: collapse; text-align:center; margin-top:30px"> -->
+<!-- 						<tr><td id="clockDate" style="font-size:16px; font-weight:normal; text-decoration:none; text-shadow: none; color: white"></td> -->
+<!-- 						</tr>				 -->
+<!-- 						<tr> -->
+<!-- 							<td id="clockTime" style="font-size:76px; font-weight:lighter; text-decoration:none; text-shadow: none; color: white"></td> -->
+<!-- 						</tr> -->
+<!-- 				</table>        -->
+       
+
+
+<!-- 	  </div> -->
+<!--     </div> -->
+       
+
+
+    
+
+	</div>	 
+
+</div>	 
+</body></html>
