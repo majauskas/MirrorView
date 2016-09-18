@@ -36,6 +36,37 @@
 	<link rel="stylesheet" href="jquery/ttw-music-player.css" />
 
 	<script type="text/javascript" src="js/weather.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/gest.js" charset="utf-8"></script>
+
+		<script>
+			$(function() {
+
+				document.addEventListener('gest', function(gesture) {
+         		console.log(gesture);
+				var message = 'aaa';
+				if (gesture.direction) {
+					message = gesture.direction;
+				} else {
+					message = gesture.error.message;
+				}
+				console.log(message);
+				 $("#gesture").html(message);
+		         $("#gesture").attr("style","display: block;");
+		         setTimeout(function() {
+		        	 $("#gesture").attr("style","display: none;");
+				 }, 3000);
+         
+// 					if (gesture.left) {
+// 						$('.slidesjs-next').trigger('click');
+// 					} else if (gesture.right) {
+// 						$('.slidesjs-previous').trigger('click');
+// 					}
+				}, false);
+
+				gest.start();
+				/* /add gest.js controls */
+			});
+		</script>
 
 <script type="text/javascript">
 	// https://github.com/anawaz-cc/equalizer
@@ -147,7 +178,9 @@
 				</tr>
 			</table> 
 		</div>
-		<div class="region top center"></div>
+		<div class="region top center">
+			<div id="gesture"></div>
+		</div>
 		<div class="region top right">
        		 <div id="weather" style="margin-left:50px"></div>
 		</div>	
@@ -162,7 +195,9 @@
 	<div class="region bottom bar">
 		<div class="container"></div>
 		<div class="region bottom left"><div id="player-container"></div></div>
-		<div class="region bottom center"></div>
+		<div class="region bottom center">
+		
+		</div>
 		<div class="region bottom right">
 			<p>
 				<div class="song1 equalizer"></div>
