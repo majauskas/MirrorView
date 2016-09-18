@@ -36,9 +36,9 @@ window.gest = (function (window) {
 
 	//initialise default settings
 	var	settings = {
-		framerate: 25,
+		framerate: 35,
 		videoCompressionRate: 4,
-		sensitivity: 80,	//value from 0 to 100 (100 => very sensitive)
+		sensitivity: 90,	//value from 0 to 100 (100 => very sensitive)
 		skinFilter: false,
 		debug: {
 			state: false,
