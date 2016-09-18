@@ -32,15 +32,46 @@
 
 	<script type="text/javascript" src="jquery/jquery.jplayer.js"></script>
 	<script type="text/javascript" src="jquery/ttw-music-player-min.js"></script>
-	<link rel="stylesheet" href="jquery/myplaylist.js" />
 	<link rel="stylesheet" href="jquery/ttw-music-player.css" />
+<!-- <script type="text/javascript" src="jquery/m3uStreamPlayer.js"></script> -->
+<!-- <script type="text/javascript" src="jquery/myplaylist.js"></script> -->
+<script type="text/javascript" src="jquery/jquery.youtube-inview-autoplay.js"></script>
 
 	<script type="text/javascript" src="js/weather.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/gest.js" charset="utf-8"></script>
 
+<script type="text/javascript">
+  // Load the IFrame Player API code asynchronously.
+//   https://developers.google.com/youtube/iframe_api_reference
+  //https://developers.google.com/youtube/player_parameters#Parameters
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  function onYouTubeIframeAPIReady() {
+    $('.youtube-video').inViewAutoplay({
+      autohide: 1,
+      autoplay: 1,
+      modestbranding: 1,
+      controls: 0,
+      rel: 0,
+      quality: 'hd720',
+      loop: 1,
+      showinfo: 0
+    });
+  }
+</script>
+<script type="text/javascript">
+//     $(document).ready(function() {
+//         $("#video1").playlistParser();
+//     	m3uStreamPlayer.init({selector: '#video', debug: false});
+//     });
+</script>
+
 		<script>
 			$(function() {
-
+// return;
 				document.addEventListener('gest', function(gesture) {
          		console.log(gesture);
 				var message = '';
@@ -69,8 +100,10 @@
 		</script>
 
 <script type="text/javascript">
+
 	// https://github.com/anawaz-cc/equalizer
 	$(document).ready(function(){
+// return;
 		$('#song1').equalizer({
 			color1: '#74BBFB'
 			,color2: '#fff'
@@ -79,7 +112,9 @@
 </script>
 
     <script type="text/javascript">
+    
         $(document).ready(function(){
+// return;
             var description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id tortor nisi. Aenean sodales diam ac lacus elementum scelerisque. Suspendisse a dui vitae lacus faucibus venenatis vel id nisl. Proin orci ante, ultricies nec interdum at, iaculis venenatis nulla. ';
             $('#player-container').ttwMusicPlayer(
             		[
@@ -107,16 +142,12 @@
     </script>
 
 
-<script type="text/javascript">
-//     $(document).ready(function() {
-//         $('video').playlistParser();
-//     });
-</script>
+
 
     
 <script type="text/javascript">
 	$(function() {
-
+// return;
 		var bar = new ProgressBar.Circle(ProgressBarContainer, {
 		  color: 'white',
 		  strokeWidth: 4,
@@ -153,13 +184,6 @@
 </script>
 	
 	
-	
-	  <script type="text/javascript">
-
-
-	
-  </script>
-	
 </head>
 
 	<body>
@@ -183,6 +207,11 @@
 		</div>
 		<div class="region top right">
        		 <div id="weather" style="margin-left:50px"></div>
+       		 <div class="youtube-video"  style="padding-left:-100%" 
+	     id="menorca-faro-de-favarix" 
+	     data-video-id="o2Fs6SoRHCk" 
+	     width="500" 
+	     height="363"></div>
 		</div>	
 	</div>
 	
@@ -190,7 +219,9 @@
 	<div class="region middle center">
 			<div id="ProgressBarContainer" style="width:200px; height:200px; left:40%"></div>
 	</div>
-	<div class="region lower third"><br/></div>
+	<div class="region lower third">
+	
+	</div>
 	
 	<div class="region bottom bar">
 		<div class="container"></div>
@@ -202,7 +233,7 @@
 			<p>
 				<div class="song1 equalizer"></div>
 				<audio loop autoplay id="song1">
-					<source src="music/file.mp3" type='audio/ogg'>
+					<source src="music/1.mp3" type='audio/ogg'>
 				</audio>
 			<p>		
 		</div>
