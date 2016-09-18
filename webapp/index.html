@@ -35,33 +35,34 @@
 	<link rel="stylesheet" href="jquery/ttw-music-player.css" />
 <!-- <script type="text/javascript" src="jquery/m3uStreamPlayer.js"></script> -->
 <!-- <script type="text/javascript" src="jquery/myplaylist.js"></script> -->
-<script type="text/javascript" src="jquery/jquery.youtube-inview-autoplay.js"></script>
+
 
 	<script type="text/javascript" src="js/weather.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/gest.js" charset="utf-8"></script>
+	
+<!-- <script type="text/javascript" src="jquery/jquery.youtube-inview-autoplay.js"></script> -->
+<!-- <script type="text/javascript"> -->
+//   // Load the IFrame Player API code asynchronously.
+// //   https://developers.google.com/youtube/iframe_api_reference
+//   //https://developers.google.com/youtube/player_parameters#Parameters
+//   var tag = document.createElement('script');
+//   tag.src = "https://www.youtube.com/player_api";
+//   var firstScriptTag = document.getElementsByTagName('script')[0];
+//   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-<script type="text/javascript">
-  // Load the IFrame Player API code asynchronously.
-//   https://developers.google.com/youtube/iframe_api_reference
-  //https://developers.google.com/youtube/player_parameters#Parameters
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/player_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  function onYouTubeIframeAPIReady() {
-    $('.youtube-video').inViewAutoplay({
-      autohide: 1,
-      autoplay: 1,
-      modestbranding: 1,
-      controls: 0,
-      rel: 0,
-      quality: 'hd720',
-      loop: 1,
-      showinfo: 0
-    });
-  }
-</script>
+//   function onYouTubeIframeAPIReady() {
+//     $('.youtube-video').inViewAutoplay({
+//       autohide: 1,
+//       autoplay: 1,
+//       modestbranding: 1,
+//       controls: 0,
+//       rel: 0,
+//       quality: 'hd720',
+//       loop: 1,
+//       showinfo: 0
+//     });
+//   }
+<!-- </script> -->
 <script type="text/javascript">
 //     $(document).ready(function() {
 //         $("#video1").playlistParser();
@@ -207,11 +208,11 @@
 		</div>
 		<div class="region top right">
        		 <div id="weather" style="margin-left:50px"></div>
-       		 <div class="youtube-video"  style="padding-left:-100%" 
-	     id="menorca-faro-de-favarix" 
-	     data-video-id="o2Fs6SoRHCk" 
-	     width="500" 
-	     height="363"></div>
+<!--        		 <div class="youtube-video"  style="padding-left:-100%"  -->
+<!-- 			     id="menorca-faro-de-favarix"  -->
+<!-- 			     data-video-id="o2Fs6SoRHCk"  -->
+<!-- 			     width="500"  -->
+<!-- 			     height="363"></div> -->
 		</div>	
 	</div>
 	
