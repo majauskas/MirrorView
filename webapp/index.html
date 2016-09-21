@@ -64,10 +64,14 @@
 //   }
  </script> 
 <script type="text/javascript">
-//     $(document).ready(function() {
-//         $("#video1").playlistParser();
-//     	m3uStreamPlayer.init({selector: '#video', debug: false});
-//     });
+$(function () {
+    setInterval(function () {
+	    $('.star-1').fadeOut(150).delay(2000).fadeIn(300).fadeOut(150).delay(1254);
+        $('.star-2').fadeOut(300).fadeIn(120).fadeOut(120).delay(1920);
+        $('.star-3').fadeOut(150).delay(1200).fadeIn(300).fadeOut(150).delay(800);
+        $('.star-4').fadeOut(700).fadeIn(300).fadeOut(160).delay(1350);
+    }, 1);
+});
 </script>
 
 		<script>
@@ -226,6 +230,10 @@ return;
 	<div class="region upper third"></div>
 	<div class="region middle center">
 <!-- 			<div id="ProgressBarContainer" style="width:200px; height:200px; left:40%"></div> -->
+  <div class="star star-1"></div>
+  <div class="star star-2"></div>
+  <div class="star star-3"></div>
+  <div class="star star-4"></div>
 	</div>
 	<div class="region lower third">
 	
