@@ -20,9 +20,9 @@ function createWindow () {
 
   // Create the browser window.
   if(isProd){
-	  mainWindow = new BrowserWindow({fullscreen:true,autoHideMenuBar:true, darkTheme: true, disableAutoHideCursor:true, webPreferences: {nodeIntegration: false}})
+	  mainWindow = new BrowserWindow({show: false, fullscreen:true,autoHideMenuBar:true, darkTheme: true, disableAutoHideCursor:true, webPreferences: {nodeIntegration: false}})
   }else{
-	  mainWindow = new BrowserWindow({width: 1200, height: 700, x: 0, y: 0, fullscreen:false,autoHideMenuBar:true, darkTheme: true, webPreferences: {nodeIntegration: false}})      
+	  mainWindow = new BrowserWindow({show: false, width: 1200, height: 700, x: 0, y: 0, fullscreen:false,autoHideMenuBar:true, darkTheme: true, webPreferences: {nodeIntegration: false}})      
   }
 
   mainWindow.loadURL("http://localhost:8080");
@@ -40,7 +40,13 @@ function createWindow () {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     mainWindow = null
-  })
+  });
+  
+  mainWindow.webContents.on('did-finish-load', function() {
+	    setTimeout(function(){
+	      mainWindow.show();
+	    }, 40);
+  });
 }
 
 // This method will be called when Electron has finished
