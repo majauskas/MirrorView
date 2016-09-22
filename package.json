@@ -1,8 +1,8 @@
 {
-  "name": "mindes-mirror",
+  "name": "MirrorView",
   "version": "1.0.0",
   "private": true,
-  "description": "Mindes Mirror Application",
+  "description": "MirrorView Application",
   "author": "Mindaugas Ajauskas",
   "readmeFilename": "README.md",
   "main": "node-js/main.js",
