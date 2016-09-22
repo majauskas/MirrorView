@@ -1,2 +1,2 @@
-# mindes-mirror
-Mindes Mirror Application
+# MirrorView
+MirrorView Application
