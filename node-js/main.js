@@ -20,7 +20,7 @@ function createWindow () {
 
   // Create the browser window.
   if(isProd){
-	  mainWindow = new BrowserWindow({fullscreen:true,autoHideMenuBar:true, darkTheme: true, webPreferences: {nodeIntegration: false}})
+	  mainWindow = new BrowserWindow({fullscreen:true,autoHideMenuBar:true, darkTheme: true, disableAutoHideCursor:true, webPreferences: {nodeIntegration: false}})
   }else{
 	  mainWindow = new BrowserWindow({width: 1200, height: 700, x: 0, y: 0, fullscreen:false,autoHideMenuBar:true, darkTheme: true, webPreferences: {nodeIntegration: false}})      
   }
