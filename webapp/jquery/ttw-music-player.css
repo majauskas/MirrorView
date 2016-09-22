@@ -99,7 +99,6 @@
     display: block;
     float: left;
     background: transparent url(../images/rating-off.png) no-repeat center center scroll;
-    cursor: pointer;
 }
 
 .ttw-music-player .rating-star:hover,
