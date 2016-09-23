@@ -91,7 +91,6 @@ html {
 }
 
 body {
-  margin: 60px;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -178,21 +177,10 @@ body {
   position: absolute;
 }
 
-.region.fullscreen {
-  position: absolute;
-  top: -60px;
-  left: -60px;
-  right: -60px;
-  bottom: -60px;
-}
-
-.region.right {
-  right: 40px;
-}
 
 
 .region.top {
-  top: 0;
+  top: 0px;
 }
 
 .region.top .container {
@@ -213,11 +201,7 @@ body {
   transform: translateX(-50%);
 }
 
-.region.top.right,
-.region.top.left,
-.region.top.center {
-  top: 100%;
-}
+
 
 .region.bottom {
   bottom: 0;
@@ -267,10 +251,12 @@ body {
 
 .region.left {
   text-align: left;
+  left: 5px;
 }
 
 .region.right {
   text-align: right;
+  right: 5px;
 }
 
 .region table {
