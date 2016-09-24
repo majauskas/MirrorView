@@ -5,9 +5,7 @@ var path = require('path');
 var fs = require('fs');
 var bodyParser = require('body-parser');
 var os = require('os');
-var Omx = require('node-omxplayer');
-
-var player = null;
+var player = require("./omxplayer.js");
 
 var Server = function() {
 
@@ -43,13 +41,16 @@ this.start = function() {
   
   
   app.get('/play', function(req, res) {
-	  player = Omx('http://lucky.lts1.net:23000/live/mindagaus/x6COWBCJmH/2483.ts');
+	  player.ini('http://lucky.lts1.net:23000/live/mindagaus/x6COWBCJmH/2483.ts');
   });
   
-  app.get('/quit', function(req, res) {
-	  player.quit();
+  app.get('/player/:command', function(req, res) {
+	  player.command(req.params.command);
   });  
-  
+
+  app.get('/quit', function(req, res) {
+	  player.exit();
+  });  
   
 
 };
