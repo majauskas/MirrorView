@@ -18,13 +18,13 @@ function createWindow () {
 	  isProd = true;
   }
 
-  if(isProd){
-	  mainWindow = new BrowserWindow({show: false, fullscreen:true,autoHideMenuBar:true, darkTheme: true, disableAutoHideCursor:true, webPreferences: {nodeIntegration: false}})
-  }else{
-	  mainWindow = new BrowserWindow({show: false, width: 800, height: 700, x: 0, y: 0, fullscreen:false,autoHideMenuBar:true, darkTheme: true, webPreferences: {nodeIntegration: false}})      
-  }
+//  if(isProd){
+//	  mainWindow = new BrowserWindow({show: false, fullscreen:true,autoHideMenuBar:true, darkTheme: true, disableAutoHideCursor:true, webPreferences: {nodeIntegration: false}})
+//  }else{
+//	  mainWindow = new BrowserWindow({show: false, width: 800, height: 700, x: 0, y: 0, fullscreen:false,autoHideMenuBar:true, darkTheme: true, webPreferences: {nodeIntegration: false}})      
+//  }
   
-//  mainWindow = new BrowserWindow({width: 800, height: 700, x: 0, y: 0, fullscreen:false,autoHideMenuBar:true, darkTheme: true, webPreferences: {nodeIntegration: false}})
+  mainWindow = new BrowserWindow({width: 800, height: 700, x: 0, y: 0, fullscreen:false,autoHideMenuBar:true, darkTheme: true, webPreferences: {nodeIntegration: false}})
 
   mainWindow.loadURL("http://localhost:8080");
   
