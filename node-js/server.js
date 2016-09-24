@@ -42,14 +42,17 @@ this.start = function() {
   
   app.get('/play', function(req, res) {
 	  player.init('http://lucky.lts1.net:23000/live/mindagaus/x6COWBCJmH/2483.ts');
+	  res.send({});
   });
   
   app.get('/player/:command', function(req, res) {
 	  player.command(req.params.command);
+	  res.send({});
   });  
 
-  app.get('/quit', function(req, res) {
+  app.get('/exit', function(req, res) {
 	  player.exit();
+	  res.send({});
   });  
   
 

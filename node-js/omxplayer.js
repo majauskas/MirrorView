@@ -5,7 +5,11 @@ var omxProcess = null;
 
 module.exports.init = function (source) {
 	
-	var args = [source, '-live', '--win', '1300, 700, 1900, 1200'];
+//	if (Number.isInteger(initialVolume)) {
+//		args.push('--vol', initialVolume);
+//	}
+	
+	var args = [source, '-live', '--win', '1200, 600, 1920, 1080'];
 	omxProcess = spawn('omxplayer', args);
 	omxProcess.stdin.setEncoding('utf-8');
 	omxProcess.on('close', function (data) {
