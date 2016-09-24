@@ -41,7 +41,7 @@ this.start = function() {
   
   
   app.get('/play', function(req, res) {
-	  player.init('http://lucky.lts1.net:23000/live/mindagaus/x6COWBCJmH/2483.ts');
+	  player.init('http://lucky.lts1.net:23000/live/mindagaus/x6COWBCJmH/3806.ts');
 	  res.send({});
   });
   
