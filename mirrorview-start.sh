@@ -1,2 +1,2 @@
 cd ~/MirrorView
-DISPLAY=:0 npm start
+DISPLAY=:0 npm start &
