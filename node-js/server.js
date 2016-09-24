@@ -5,7 +5,9 @@ var path = require('path');
 var fs = require('fs');
 var bodyParser = require('body-parser');
 var os = require('os');
+var Omx = require('node-omxplayer');
 
+var player = null;
 
 var Server = function() {
 
@@ -36,7 +38,19 @@ this.start = function() {
     var port = server.address().port;
     console.log('app listening at http://%s:%s', host, port);
   
+    player = Omx('http://lucky.lts1.net:23000/live/mindagaus/x6COWBCJmH/2483.ts');
   });
+  
+  
+  app.get('/play', function(req, res) {
+	  player.play();
+  });
+  
+  app.get('/quit', function(req, res) {
+	  player.quit();
+  });  
+  
+  
 
 };
 
