@@ -38,12 +38,12 @@ this.start = function() {
     var port = server.address().port;
     console.log('app listening at http://%s:%s', host, port);
   
-    player = Omx('http://lucky.lts1.net:23000/live/mindagaus/x6COWBCJmH/2483.ts');
+   
   });
   
   
   app.get('/play', function(req, res) {
-	  player.play();
+	  player = Omx('http://lucky.lts1.net:23000/live/mindagaus/x6COWBCJmH/2483.ts');
   });
   
   app.get('/quit', function(req, res) {
