@@ -21,11 +21,11 @@ function createWindow () {
   if(process.argv[2] == "prod"){
 	  isProd = true;
   }
-
+  isProd = false;
   if(isProd){
 	  mainWindow = new BrowserWindow({show: false, fullscreen:true,autoHideMenuBar:true, darkTheme: true, disableAutoHideCursor:true, webPreferences: {nodeIntegration: false}})
   }else{
-	  mainWindow = new BrowserWindow({show: false, width: 800, height: 700, x: 0, y: 0, fullscreen:false,autoHideMenuBar:true, darkTheme: true, webPreferences: {nodeIntegration: false}})      
+	  mainWindow = new BrowserWindow({show: true, width: 1400, height: 900, x: 0, y: 0, fullscreen:false,autoHideMenuBar:true, darkTheme: true, webPreferences: {nodeIntegration: false}})      
   }
   
 //  mainWindow = new BrowserWindow({width: 800, height: 700, x: 0, y: 0, fullscreen:false,autoHideMenuBar:true, darkTheme: true, webPreferences: {nodeIntegration: false}})
