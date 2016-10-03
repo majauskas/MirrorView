@@ -1,4 +1,8 @@
 "use strict";
+process.on('uncaughtException', function(err) {
+	  console.error((err && err.stack) ? err.stack : err);
+});
+
 const Server = require(__dirname + "/server.js");
 
 const electron = require('electron');
@@ -28,7 +32,6 @@ function createWindow () {
 
   mainWindow.loadURL("http://localhost:8080");
   
-
   // Open the DevTools.
   if(!isProd){
     mainWindow.webContents.openDevTools()
