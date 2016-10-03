@@ -49,7 +49,7 @@ function createWindow () {
   mainWindow.webContents.on('did-finish-load', function() {
 	    setTimeout(function(){
 	      mainWindow.show();
-	    }, 5000);
+	    }, 40);
   });
 }
 
