@@ -161,7 +161,11 @@
 					if (that.settings.api == "openweathermap" && !(args[0].cod == "200" && args[1].cod == "200")) {
 						console.log("Error interacting with the openweathermap api see error object below for details:");
 						console.log(args);
-						promise.reject(args, that);
+						console.log(args[0]);
+						console.log(args[1]);
+						console.log(args[0].cod);
+						console.log(args[1].cod);//minde
+//						promise.reject(args, that);
 					}
 					else if (that.settings.api == "yahoo" && (args.query.count == 0 || args.query.results.channel.description == "Yahoo! Weather Error")) {
 						//yahoo weather really should return a better error checking method.
