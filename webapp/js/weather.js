@@ -23,6 +23,6 @@
 						weather.flatWeatherPlugin('error', data);
 					}
 			);
-	 	}, 1000*60*20);
+	 	}, 1000*60*120);
 	
   });
