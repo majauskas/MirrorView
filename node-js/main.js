@@ -30,7 +30,7 @@ function createWindow () {
   
 //  mainWindow = new BrowserWindow({width: 800, height: 700, x: 0, y: 0, fullscreen:false,autoHideMenuBar:true, darkTheme: true, webPreferences: {nodeIntegration: false}})
 
-  mainWindow.loadURL("http://localhost:8080/test.html");
+  mainWindow.loadURL("http://localhost:8080");
   
   // Open the DevTools.
   if(!isProd){
