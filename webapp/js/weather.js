@@ -1,5 +1,5 @@
   $(document).ready(function() {
-return;
+
 		//Setup the plugin, see readme for more examples
 		var weather = $("#weather").flatWeatherPlugin({
 		  location: "Gallarate", //city and region *required 
